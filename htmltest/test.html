@@ -1,0 +1,35 @@
+<html>
+<head>
+    <!-- 样式 -->
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>.bg{color:red}</style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- 元素绑定 -->
+    <div class="bg" id ="app">
+        Hello World！
+        {{msg}}
+    </div>
+    <div>{{count+1}}</div>
+    <button type="button" v-on:click="submit">点击加一</button>
+</div>
+    <!-- 脚本 -->
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            msg: "hello vue",
+            count:0
+        },
+        methods:{
+            submit:function(){
+                this.count++
+            }
+        }
+    })
+</script>
+</body>
+</html>

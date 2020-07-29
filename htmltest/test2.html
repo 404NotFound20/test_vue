@@ -1,0 +1,42 @@
+<html>
+<head>
+    <!-- 样式 -->
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>.bg{color:red}</style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="bg" id="app">
+    {{msg}}
+    <p>{{msg1}}</p>
+</div>
+    <!-- 脚本 -->
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            msg: "hello vue",
+            another:"laalal"},
+        // 监听属性 当本实例属性发生变化时就执行方法  单变量监听
+        watch:{
+            msg:function(newval,oldval){            
+                console.log("new is :"+newval)
+                console.log("old is :"+oldval)
+            },
+            another:function(newval,oldval){            
+                console.log("new is :"+newval)
+                console.log("old is :"+oldval)
+            }
+        },
+        //计算属性  msg1中包含的本实例变量发生变化才会重新计算  多变量监听
+        computed:{
+            msg1:function(){
+                return "computed="+this.msg+", another = "+this.another
+            }
+        }
+    
+    })
+</script>
+</body>
+</html>

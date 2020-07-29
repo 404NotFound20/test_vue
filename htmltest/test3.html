@@ -1,0 +1,31 @@
+<html>
+<head>
+    <!-- 样式 -->
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>.bg{color:red}</style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-if="count > 0">count >0</div>
+    <div v-else-if="count < 0 && count > -5">{{count*100}}</div>
+    <div v-else>{{count}}</div>
+    <div v-show="count==-1">count=-1:{{count}}</div>
+        Hello World！
+        {{msg}}
+    <dir v-for="item in list">{{item}}</dir>
+</div>
+    <!-- 脚本 -->
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            msg: "hello vue",
+            count:0,
+            list:[1,2,3,4,5]
+        }
+    })
+</script>
+</body>
+</html>
